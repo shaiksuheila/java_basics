@@ -1,0 +1,86 @@
+package javaprogram;
+
+import java.util.*;
+
+public class arr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Integer[] a= {1,3,4,8,9,5,7,6,2};
+		//array to list
+		//method-1
+		List<Integer> y=(Arrays.asList(a));
+		System.out.println(y);
+		//method-2
+		List<Integer> l=new ArrayList<>(Arrays.asList(a));
+		System.out.println(l);
+		//value present in index in list method-1
+		System.out.println("index" +l.indexOf(6));
+		System.out.println(l.get(0));
+		System.out.println(l.get(1));
+		System.out.println(l.get(l.size()-2));
+		//index  value method-2
+		int w=l.get(3);
+		System.out.println("index"+w);
+		//set in list
+		Set<Integer> h=new HashSet<>();
+		for(Integer i:l) {
+			h.add(i);
+		}
+		for(Integer i:h) {
+			System.out.println("set"+i+" ");
+		}
+		//insert in list
+		l.add(2,7);
+		System.out.println("insert"+l);
+		//replace in list
+		l.set(2, 5);
+		System.out.println("replace"+l);
+		//pop in list
+		l.remove(l.size()-1);
+		System.out.println("remove"+l);
+		
+		//copy of list
+		List<Integer> c=new ArrayList<>();
+		c.addAll(l);
+		System.out.println("copy"+c);
+		
+		
+		
+		//list to array
+		int[] z=y.stream().mapToInt(Integer::intValue).toArray();
+		int[] x=y.stream().mapToInt(i->i).toArray();
+		int[] b= {8,6,4,3};
+		//HASHMAP in array============
+
+		HashMap<Integer,Integer> m=new HashMap<>();
+		for(int j=0;j<b.length;j++) {
+			if(m.containsKey(b[j])) {
+				m.put(b[j],m.get(b[j]+1));//If element already exists, just increase the count
+			}
+			else {
+				m.put(b[j],1);//If unique element found
+			}
+		}
+		System.out.println("hash"+m);
+
+		//values and keys
+		for(Map.Entry<Integer,Integer> e:m.entrySet()){
+			System.out.println(e.getKey()+" "+e.getValue());
+			
+		}
+		//keys
+		Set<Integer> s= m.keySet();
+		ArrayList<Integer> p=new ArrayList<>(s);
+		System.out.println(p);
+		//values
+		Collection<Integer> ss = m.values();
+		ArrayList<Integer> pp=new ArrayList<>(ss);
+		System.out.println(pp);
+
+
+		System.out.println(Arrays.toString(z));		
+	}
+
+}
