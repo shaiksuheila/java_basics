@@ -1,0 +1,91 @@
+package javaprogram;
+
+import java.util.List;
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+public class strings {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String s="hello my dear chimpangee";
+		String ss="i am good chimpangee";
+		//1.length
+		System.out.println(s.length());
+		
+		//2.charAt method-return value at index
+		char r=s.charAt(0);
+		System.out.println(r);
+		
+		//3.two strings equal r not(compare)
+		if (s!=ss) {
+			System.out.println("right");
+		}
+		else {
+			System.out.println("wrong");
+		}
+		int b=s.compareTo(ss);
+		System.out.println(b); 
+		
+		//4.concat
+		String h=s.concat(ss);
+		System.out.println(h);
+		
+		//5.upper and lower cases
+		String x=s.toUpperCase();
+		String y=ss.toUpperCase();
+		System.out.println(x+' '+y);
+		String x1=x.toLowerCase();
+		String y1=y.toLowerCase();
+		System.out.println(x1+' '+y1);
+		
+		//6.convert to string
+		System.out.println(s.toString());
+		
+		//7.split
+		String[] l=s.split(" ",1);
+		//System.out.println(l);
+		for(String s1:l) {
+			System.out.println("splitting-"+" "+s1);
+		}
+		System.out.println(l);
+		
+		//8.replace
+		String a=s.replace('e',' ');
+		System.out.println("replace"+a);
+		
+		//9.reverse of string method-1
+		String q=" ";
+		char ch;
+		for(int i=0;i<s.length();i++) {
+			ch=s.charAt(i);
+			//System.out.println(ch);
+			q=ch+q;
+			//System.out.println(q);
+		}
+		System.out.println(q);
+		
+		//model-2
+		StringBuffer c=new StringBuffer(s);
+		c.reverse();
+		System.out.println(c);
+	
+		//10.characters of string to list
+		String input = "GeeksForGeeks";
+		char[] try1 = input.toCharArray();
+		Arrays.sort(try1);
+		System.out.println("sorting"+Arrays.toString(try1));
+        List<Character> k1=new ArrayList<>();
+        for(char f:try1) {
+        	k1.add(f);
+        }
+		System.out.println(k1);
+		
+		//11.join 
+		String aa=String.join(" ","uf", "gjn", "j");
+		System.out.println(aa);
+	
+	}
+
+}
