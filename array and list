@@ -1,0 +1,97 @@
+package javaprogram;
+import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+import java.util.Collections;
+import java.util.Arrays;
+public class array {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		// reading input
+		int n;
+		System.out.println("enter n");
+		n=sc.nextInt();
+		
+		//reading array
+		int[] arr=new int[5];
+		System.out.println("enter values:");
+		for (int i=0; i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		//executing array elements
+		System.out.println("values are:");
+		for(int i:arr) {
+			System.out.println(i);
+		}
+		//method-2 for execution
+		for(int i=0;i<n;i++) {
+			System.out.println(arr[i]);
+		}
+		//method-3 for execution
+		System.out.println("mainarray"+Arrays.toString(arr));
+		
+		//1.sum of array
+		System.out.println("sum");
+		int s=Arrays.stream(arr).sum();
+		System.out.println(s);
+		
+		//2.length of array
+		System.out.println("length:");
+		int d;
+		d=arr.length;
+		System.out.println(d);
+
+		//3.sorting of array
+		int j;
+		Arrays.sort(arr);
+		System.out.println("sorted"+Arrays.toString(arr));
+
+		//using collections only in list
+		
+		//4.Array to list
+		var l=Arrays.toString(arr);
+		System.out.println("list"+l);
+		System.out.println(l.getClass().getSimpleName());
+
+		//5.ARRAY TO LIST and Appending
+		ArrayList<Integer> k=new ArrayList<>();//creating a list
+		for(int i:arr) {
+			k.add(i);
+		}
+		//6.Type of data
+		System.out.println(k.getClass().getSimpleName());
+
+		System.out.println("appending"+k);
+		
+		//7.MIN
+		System.out.println("min"+" " +(Collections.min(k)));
+		
+		//8.Max
+		System.out.println("max"+" "+ (Collections.max(k)));
+		
+		//9.sorting using collections
+		Collections.sort(k);
+		System.out.println("sorted ascending order"+k);
+		Collections.sort(k,Collections.reverseOrder());
+		System.out.println("sorted desending order"+k);
+		
+		//10.reverse of list
+		Collections.reverse(k);
+		System.out.println(k);
+		
+		for(int m=0,u=k.size()-1; m<u;m++) {
+			k.add(m,k.remove(u));
+			
+		}
+		System.out.println("reverse"+k);
+		int z=k.stream().mapToInt(Integer::intValue).sum();
+		System.out.println(z);
+
+
+	}
+}
+
+
+
